@@ -1,0 +1,14 @@
+# build artifacts
+survival
+*.o
+*.out
+
+# build directories
+build/
+
+# editor
+*.swp
+*.swo
+
+# OS files
+.DS_Store
