@@ -7,6 +7,7 @@ int evaluateCivilization() {
 
   double uptime = getSystemUptime();
   bool network = checkNetworkConnection();
+  int year = getSystemYear();
 
   std::cout << "\nAnalyzing civilization status...\n";
 
@@ -20,11 +21,18 @@ int evaluateCivilization() {
     std::cout << "Long-running system detected.\n";
   }
 
+  if (year >= 2020 && year <= 2100) {
+    score += 20;
+    std::cout << "System time appears valid.\n";
+  } else {
+    std::cout << "Suspicious system time detected.\n";
+  }
+
   if (network) {
     score += 30;
     std::cout << "External network reachable.\n";
   }
-
+  
   std::cout << "Civilization score: " << score << "\n";
 
   return score;

@@ -1,6 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 #include "diagnostics.h"
 
 double getSystemUptime() {
@@ -25,6 +26,13 @@ bool checkNetworkConnection() {
   return false;
 }
 
+int getSystemYear() {
+  std::time_t now = std::time(nullptr);
+  std::tm *local = std::localtime(&now);
+
+  return 1900 + local->tm_year;
+}
+
 void runDiagnostics() {
     std::cout << "Running system diagnostics...\n\n";
 
@@ -41,7 +49,11 @@ void runDiagnostics() {
     } else {
       std::cout << "Long running system detected.\n";
     }
-    
+
+    int year = getSystemYear();
+
+    std::cout << "System year: " << year << "\n\n";
+
     bool network = checkNetworkConnection();
     std::cout << "Checking network connection...\n";
     if (network) {
