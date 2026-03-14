@@ -2,5 +2,7 @@
 #define DIAGNOSTICS_H
 
 void runDiagnostics();
+double getSystemUptime();
+bool checkNetworkConnection();
 
 #endif // !DIAGNOSTICS_H
