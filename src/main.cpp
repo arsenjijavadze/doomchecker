@@ -4,7 +4,8 @@
 
 int main() {
    std::cout << "================================\n";
-   std::cout << "    SURVIVAL ASSISTANT SYSTEM\n";
+   std::cout << "          DOOMCHECKER\n";
+   std::cout << " Civilization Monitoring System\n";
    std::cout << "================================\n\n";
 
    runDiagnostics();

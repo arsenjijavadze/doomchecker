@@ -4,5 +4,6 @@
 void runDiagnostics();
 double getSystemUptime();
 bool checkNetworkConnection();
+int getSystemYear();
 
 #endif // !DIAGNOSTICS_H
