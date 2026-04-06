@@ -1,6 +1,7 @@
 #include <iostream>
 #include "civilization.h"
 #include "diagnostics.h"
+#include "activity.h"
 
 int evaluateCivilization() {
   int score = 0;
@@ -31,6 +32,13 @@ int evaluateCivilization() {
   if (network) {
     score += 30;
     std::cout << "External network reachable.\n";
+  }
+
+  if (isUserActive()) {
+    score += 20;
+    std::cout << "User activity detected.\n";
+  } else {
+    std::cout << "No user activity detected.\n";
   }
   
   std::cout << "Civilization score: " << score << "\n";
